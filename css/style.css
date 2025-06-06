@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;600&display=swap');
+
+body {
+  margin: 0;
+  height: 100vh;
+  background: #0e0e0e;
+  font-family: 'Outfit', sans-serif;
+  color: #cfd8dc;
+  perspective: 1000px;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+canvas#stars {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.loader-screen {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  animation: hideLoader 2s ease forwards 1.8s;
+}
+.boot-text {
+  color: #00ff66;
+  font-family: monospace;
+  font-size: 22px;
+}
+@keyframes hideLoader {
+  to { opacity: 0; visibility: hidden; }
+}
+
+.card {
+  background: #1a1a1a;
+  border-radius: 20px;
+  padding: 40px 10px;
+  text-align: center;
+  transform-style: preserve-3d;
+  transition: transform 0.2s ease-out;
+  box-shadow: 0 0 30px #00ff66c0;
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 300px;
+}
+
+.pfp-container {
+  width: 135px;
+  height: 135px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 20px;
+  border: 3px solid #00ff66;
+  box-shadow: 0 0 25px #00ff66a6;
+  animation: glow 2.5s ease-in-out infinite;
+}
+.pfp {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+h1 {
+  margin: 0;
+  font-size: 40px;
+  color: #00ff66;
+  font-weight: 600;
+  text-shadow: 0 0 5px #00ff66;
+  animation: glitch 2s infinite;
+}
+@keyframes glitch {
+  0%, 100% { text-shadow: 0 0 5px #00ff66; transform: translate(0,0); }
+  20% { text-shadow: -2px 2px #00ff66; }
+  40% { text-shadow: 2px -2px #00ff66; }
+  60% { transform: translate(1px, -1px); }
+  80% { transform: translate(-1px, 1px); }
+}
+
+p {
+  margin: 8px 0 20px;
+  font-size: 14px;
+  color: #9e9e9e;
+}
+
+.icons {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  padding: 0;
+  margin: 0;
+}
+.icons li a {
+  font-size: 30px;
+  color: #888;
+  transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+}
+.icons li a:hover {
+  color: #00ff66;
+  transform: scale(1.2);
+  text-shadow: 0 0 10px #00ff66, 0 0 20px #00ff66;
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 25px #00ff66a6; }
+  50% { box-shadow: 0 0 40px #00ff66; }
+}
